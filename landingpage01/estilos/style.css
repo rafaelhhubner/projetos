@@ -289,7 +289,7 @@ footer h3 {
 }
 
 /* Mobile */
-@media (max-width: 450px) {
+@media screen and (max-width: 450px) {
     .btn {
         opacity: 1;
     }
