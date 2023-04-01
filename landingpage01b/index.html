@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -15,29 +15,27 @@
     <header id="event-description">
         <div id="disclaimer">
             <h2>InDecor</h2>
-            <p class="about-event">
-                Um evento para revolucionar sua criatividade
-            </p>
+            <p class="about-event">Um evento para revolucionar sua criatividade</p>
             <p>Data do evento:</p>
             <p class="event-date">Domingo, 28 de Maio, a partir das 14h</p>
         </div>
         <div id="subscription-form">
             <p>Preencha o formulário para receber os detalhes do evento</p>
-            <form>
+            <form action="" method="post" autocomplete="on">
                 <div class="form-group">
                     <label for="name">Nome</label>
-                    <input type="text" name="name" id="name" placeholder="Digite seu nome">
+                    <input type="text" id="name" name="name" placeholder="Digite seu nome">
                 </div>
                 <div class="form-group">
                     <label for="email">E-mail</label>
-                    <input type="email" name="email" id="email" placeholder="Digite seu melhor e-mail">
+                    <input type="email" id="email" class="email" placeholder="Digite seu melhor e-mail">
                 </div>
                 <div class="form-group">
                     <label for="phone">Telefone</label>
-                    <input type="text" name="phone" id="phone" placeholder="Número de WhatsApp"> 
+                    <input type="text" name="phone" id="phone" placeholder="Número de WhatsApp">
                 </div>
                 <div class="form-group">
-                    <label for="interest">Principais interesses</label>
+                    <label for="interest">Principais Interesses</label>
                     <select name="interest" id="interest">
                         <option value="" selected disabled>Selecione</option>
                         <option value="apartment">Apartamentos</option>
@@ -46,30 +44,24 @@
                         <option value="other">Outros</option>
                     </select>
                 </div>
-                <input type="submit" class="btn" value="Quero me Inscrever">
+                <input type="submit" class="btn" value="Quero me inscrever">
             </form>
         </div>
     </header>
     <section id="key-benefits">
         <h2>O que você vai aprender:</h2>
-        <div class="benefits">
+        <div id="benefits">
             <div class="benefit">
                 <div id="benefit-1" class="benefit-img"></div>
-                <p>
-                    Alguma coisa muito legal, que vai fazer a diferença na vida do participante.
-                </p>
+                <p>Alguma coisa muito legal, que vai fazer a diferença na vida do participante.</p>
             </div>
             <div class="benefit">
                 <div id="benefit-2" class="benefit-img"></div>
-                <p>
-                    Alguma coisa muito legal, que vai fazer a diferença na vida do participante;
-                </p>
+                <p>Alguma coisa muito legal, que vai fazer a diferença na vida do participante.</p>
             </div>
             <div class="benefit">
                 <div id="benefit-3" class="benefit-img"></div>
-                <p>
-                    Alguma coisa muito legal, que vai fazer a diferença na vida do participante;
-                </p>
+                <p>Alguma coisa muito legal, que vai fazer a diferença na vida do participante.</p>
             </div>
         </div>
     </section>
@@ -103,11 +95,11 @@
                     <li>Posicionamento</li>
                     <li>Aproveitamento de espaço</li>
                     <li>Combinação de cores</li>
-                    <li>Organização</li>
+                    <li>organização</li>
                     <li>E muito mais...</li>
                 </ul>
             </div>
-            <img src="imagens/hrz-4.jpg" alt="Sala de jantar decorada">
+            <img src="imagens/hrz-4.jpg" alt="Sala de Jantar decorada">
         </div>
         <div class="detail" id="detail-3">
             <img src="imagens/hrz-5.jpg" alt="Sala decorada em tons escuros">
@@ -126,7 +118,7 @@
     </section>
     <section id="cta">
         <h3>Gostou? Então se inscreva: </h3>
-        <button class="btn">Solicitar Inscrição</button>
+        <button class="btn">Solicitar Inscrição:</button>
     </section>
     <footer id="footer">
         <h3>InDecor</h3>
