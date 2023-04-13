@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do List</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+</head>
+<body>
+    <div id="tasks-container">
+        <div id="tasks-header">
+            <h2>Salve a sua próxima tarefa:</h2>
+            <form action="" id="add-task-form">
+                <input type="text" id="task-title" placeholder="O que você vai fazer?">
+                <button id="add-btn" type="submit"> 
+                    <i class="material-icons">add</i>
+                </button>
+            </form>
+        </div>
+    
+        <div id="tasks-list-container">
+            <h2>Essas são as suas tarefas:</h2>
+            <ul id="class-list">
+                <li class="task-box">
+                    <span class="task-title">Teste 1</span>
+                    <i class="material-icons done-btn">done</i>
+                    <i class="material-icons remove-btn">close</i>
+                </li>
+
+                <li class="task-box">
+                    <span class="task-title">Teste 2</span>
+                    <i class="material-icons">done</i>
+                    <i class="material-icons">close</i>
+                </li>
+
+                <li class="task-box">
+                    <span class="task-title">Teste 3</span>
+                    <i class="material-icons">done</i>
+                    <i class="material-icons">close</i>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
