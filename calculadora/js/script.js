@@ -16,20 +16,41 @@ class Calculator {
             return;
         }
 
-        this.currentOperation = digit
-        this.updateScreen()
+        this.currentOperation = digit;
+        this.updateScreen();
     }
 
     // Process all calculator operations
     processOperation(operation) {
+        // Check if current is empty
+        if(this.currentOperationText.innerText === "") {
+            // Change operation
+            if(this.previousOperationText.innerText !== "") {
+               this.changeOperation(operation)               
+            }
+            return;
+        }
+
         // Get current and previous value
         let operationValue
-        const previous = +this.previousOperationText.innerText.split(" ")[0]
-        const current = this.currentOperationText.innerText
+        let previous = +this.previousOperationText.innerText.split(" ")[0];
+        let current = +this.currentOperationText.innerText;
 
         switch(operation) {
             case "+":
                 operationValue = previous + current
+                this.updateScreen(operationValue, operation, current, previous);
+                break;
+            case "-":
+                operationValue = previous - current;
+                this.updateScreen(operationValue, operation, current, previous);
+                break;
+            case "/":
+                operationValue = previous / current;
+                this.updateScreen(operationValue, operation, current, previous);
+                break;
+            case "*":
+                operationValue = previous * current;
                 this.updateScreen(operationValue, operation, current, previous);
                 break;
             default:
@@ -45,22 +66,33 @@ class Calculator {
         current = null, 
         previous = null
     ) {
-
-        console.log(operationValue, operation, current, previous);
-
         if(operationValue === null) {
+            //Append number to current value
             this.currentOperationText.innerText += this.currentOperation;
         } else {
             //Check if value is zero, if it is just add current value
             if(previous === 0) {
-                operationValue = current
+                operationValue = current;   
             }
 
             // Add current value to previous 
-            this.previousOperationText.innerText = `${operationValue} ${operation} `
-            this.currentOperationText.innerText = ""
+            this.previousOperationText.innerText = `${operationValue} ${operation}`;    
+            this.currentOperationText.innerText = "";
         }
     }
+
+
+// Change math operation
+changeOperation(operation) {
+
+    const mathOperations = ["*", "/", "+", "-"]
+
+    if(!mathOperations.includes(operation)) {
+        return
+    }
+    //
+    this.previousOperationText.innerText = this.previousOperationText.innerText.slice(0, -1) + operation
+}    
 }
 
 const calc = new Calculator(previousOperationText, currentOperationText);
