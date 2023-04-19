@@ -42,6 +42,11 @@
     color: #525763;
 }
 
+#milliseconds {
+    font-size: 30px;
+    color: #525763;
+}
+
 .buttons {
     display: flex;
     gap: 1rem;
