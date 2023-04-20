@@ -15,28 +15,28 @@ let isPaused = false;
 startBtn.addEventListener("click", startTimer);
 
 function startTimer() {
-pauseBtn.addEventListener("click", pauseTimer);
-resumeBtn.addEventListener("click", resumeTimer);
-resetBtn.addEventListener("click", resetTimer)
-    interval = setInterval(() => {
+    pauseBtn.addEventListener("click", pauseTimer);
+    resumeBtn.addEventListener("click", resumeTimer);
+    resetBtn.addEventListener("click", resetTimer)
+        interval = setInterval(() => {
 
-        if(!isPaused) {
-            milliseconds += 10;
+            if(!isPaused) {
+                milliseconds += 10;
 
-            if(milliseconds === 1000) {
-                seconds++;
-                milliseconds = 0;
+                if(milliseconds === 1000) {
+                    seconds++;
+                    milliseconds = 0;
+                }
+                if(seconds === 60) {
+                    minutes++;
+                    seconds = 0;
+                }
+
+                minutesEl.textContent = formatTime(minutes);
+                secondsEl.textContent = formatTime(seconds);
+                millisecondsEl.textContent = formatMilliseconds(milliseconds);
             }
-            if(seconds === 60) {
-                minutes++;
-                seconds = 0;
-            }
-
-            minutesEl.textContent = formatTime(minutes);
-            secondsEl.textContent = formatTime(seconds);
-            millisecondsEl.textContent = formatMilliseconds(milliseconds);
-        }
-    }, 10);
+        }, 10);
 
     startBtn.style.display = "none";
     pauseBtn.style.display = "block";
