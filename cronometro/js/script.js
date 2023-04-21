@@ -77,5 +77,4 @@ function formatTime(time) {
 
 function formatMilliseconds(time) {
     return time < 100 ? `${time}`.padStart(3, "0") : time;
-
 }
