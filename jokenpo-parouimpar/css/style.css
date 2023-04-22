@@ -123,13 +123,20 @@ h1 {
     background-color: #527028
 }
 
-.show{
+#results{
     display: flex;
-    flex-direction: column;
+    justify-content: center;
     align-items: center;
+    text-align: center;
 }
 
-#results .btn {
+.space {
+    display: flex;
+    justify-content: center;
+}
+
+#jokenResults button,
+#parimResults button {
     text-align: center;
     margin: 15px;
     color:#1F0802;
@@ -137,6 +144,7 @@ h1 {
     opacity: 0.8;
 }
 
-#results .btn:hover {
+#jokenResults button:hover,
+#parimResults button:hover{
     opacity: 1;
 }
