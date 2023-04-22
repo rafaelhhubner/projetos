@@ -123,12 +123,20 @@ h1 {
     background-color: #527028
 }
 
-.results {
+.show{
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.results .btn {
+#results .btn {
     text-align: center;
+    margin: 15px;
+    color:#1F0802;
+    background-color:#1C646D;
+    opacity: 0.8;
+}
+
+#results .btn:hover {
+    opacity: 1;
 }
