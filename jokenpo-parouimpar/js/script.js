@@ -9,8 +9,8 @@ let line = document.querySelector("#line");
 let jogarJok = document.querySelector("#btn-2");
 let jogarPar = document.querySelector("#btn-3");
 
-let resultsJok = document.querySelector("#jokenResults");
-let resultsPar = document.querySelector("#parimResults");
+let resultsJok = document.querySelector("#joken-results");
+let resultsPar = document.querySelector("#parim-results");
 let repetir = document.querySelector("#btn-4")
 
 escolher.addEventListener("click", function() {
@@ -29,7 +29,6 @@ escolher.addEventListener("click", function() {
 })
 
 jogarJok.addEventListener("click", function() {
-
     repetir.style.display = "block"
     resultsJok.style.display = "block";
     jokenpo.style.display = "none";
@@ -37,7 +36,6 @@ jogarJok.addEventListener("click", function() {
 })
 
 jogarPar.addEventListener("click", function() {
-
     repetir.style.display = "block"
     resultsPar.style.display = "flex";
     parimpar.style.display = "none";

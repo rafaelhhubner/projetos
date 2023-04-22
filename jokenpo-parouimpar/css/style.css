@@ -123,28 +123,31 @@ h1 {
     background-color: #527028
 }
 
-#results{
+#results {
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
 }
 
-.space {
-    display: flex;
+#joken-results,
+#parim-results {
+    display: none;
     justify-content: center;
+    align-items: center;
+    text-align: center;
 }
 
-#jokenResults button,
-#parimResults button {
+#joken-results button,
+#parim-results button {
     text-align: center;
-    margin: 15px;
+    margin: 15px auto;
     color:#1F0802;
     background-color:#1C646D;
     opacity: 0.8;
 }
 
-#jokenResults button:hover,
-#parimResults button:hover{
+#joken-results button:hover,
+#parim-results button:hover{
     opacity: 1;
 }
