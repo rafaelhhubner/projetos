@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js" defer></script>
+    <title>Jokenpô / Par ou Ímpar</title>
+</head>
+<body>
+    <h1>Plataforma de jogos</h1>
+    <section id="container">
+        <div id="escolha">
+            <h2>Escolha uma das opções à seguir para começar a jogar:</h2>
+            <div id="form">
+                <div class="esc">
+                    <label for="jok">Jokenpô</label>
+                    <input type="radio" id="jok" name="jogo">
+                </div>
+                <div class="esc">
+                    <label for="pari">Par ou Ímpar</label>
+                    <input type="radio" id="pari" name="jogo">
+                </div>
+            </div>
+            <div id="posbtn">
+                <button id="btn-1" class="btn">Escolher</button>
+            </div>
+            <div id="line" class="hide">
+
+            </div>
+        </div>
+        <div id="jokenpo" class="hide">
+            <h2>Jokenpô então, né? Vamos lá!</h2>
+            <p>Qual será seu movimento?</p>
+            <div id="jgame">
+                <div class="jogada">
+                    <label for="pedra">&#x1F44A;</label>
+                    <input type="radio" id="pedra" name="pepate">
+                </div>
+                <div class="jogada">
+                    <label for="papel">&#x270C;</label>
+                    <input type="radio" id="papel" name="pepate">
+                </div>
+                <div class="jogada">
+                    <label for="tesoura">&#x270B;</label>
+                    <input type="radio" id="tesoura" name="pepate">
+                </div>
+            </div>
+            <div class="submit">
+                <button id="btn-2" class="btn">Jogar</button>
+            </div>
+        </div>
+        <div id="jokenResults" class="hide">
+            <div class="results">
+                ABC
+                <button id="btn-3" class="btn">De novo!</button>
+            </div>
+        </div>
+        <div id="parimpar" class="hide">
+            <h2>Par ou Ímpar, aqui vamos nós!</h2>
+            <p>Eaí, vai escolher qual?</p>
+            <div id="pigame">
+                <div class="jogada">
+                    <label for="par">Par</label>
+                    <input type="radio" id="par" name="pi">
+                </div>
+                <div class="jogada">
+                    <label for="impar">Ímpar</label>
+                    <input type="radio" id="impar" name="pi">
+                </div>
+            </div>
+            <div class="submit">
+                <button id="btn-4" class="btn">Jogar</button>
+            </div>
+        </div>
+        <div id="parimResults" class="hide">
+            <div class="results">
+                123
+                <button id="btn-5" class="btn">De novo!</button>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
