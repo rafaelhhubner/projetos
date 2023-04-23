@@ -43,11 +43,6 @@ let contadorVitoriasJok = 0
 let contadorDerrotasJok = 0
 let contadorEmpatesJok = 0
 jogarJok.addEventListener("click", function() {
-    repetirJok.style.display = "block"
-    resultsJok.style.display = "block";
-    jokenpo.style.display = "none";
-    escolha.style.display = "none";
-
     relatorio = document.querySelector("#relatorio-1")
 
     let suaJogadaJok = document.getElementsByName("pepate")
@@ -55,77 +50,85 @@ jogarJok.addEventListener("click", function() {
     let pcJogada;
     let resultadoRodada;
 
-    // Sua jogada
-    if (suaJogadaJok[0].checked) {
-        console.log("PEDRA")
-        suaJogada = "Pedra"
-    } else if (suaJogadaJok[1].checked) {
-        console.log("TESOURA")
-        suaJogada = "Tesoura"
-    } else if (suaJogadaJok[2].checked) {
-        console.log("PAPEL")
-        suaJogada = "Papel"
-    }
-
-    // Jogada do PC
-    sorteio = randomNumber(1, 3)
-    if (sorteio === 1) {
-        pcJogada = "Pedra"
-    } else if (sorteio === 2) {
-        pcJogada = "Tesoura"
-    } else if (sorteio === 3) {
-        pcJogada = "Papel"
-    }
-
-    // Comparar as jogadas e obter resultado
-    if (suaJogada === pcJogada) {
-        resultadoRodada = "Empate"
-    } 
-    if (suaJogada === "Pedra") {
-        if (pcJogada === "Tesoura") {
-            resultadoRodada = "Vitória"
-        } else if (pcJogada === "Papel") {
-            resultadoRodada = "Derrota"
+    if (!suaJogadaJok[0].checked && !suaJogadaJok[1].checked && !suaJogadaJok[2].checked) {
+        window.alert("Escolha uma opção");
+    } else {
+        repetirJok.style.display = "block"
+        resultsJok.style.display = "block";
+        jokenpo.style.display = "none";
+        escolha.style.display = "none";
+        // Sua jogada
+        if (suaJogadaJok[0].checked) {
+            console.log("PEDRA")
+            suaJogada = "Pedra"
+        } else if (suaJogadaJok[1].checked) {
+            console.log("TESOURA")
+            suaJogada = "Tesoura"
+        } else if (suaJogadaJok[2].checked) {
+            console.log("PAPEL")
+            suaJogada = "Papel"
         }
-    }
-    if (suaJogada === "Tesoura") {
-        if (pcJogada === "Papel") {
-            resultadoRodada = "Vitória"
-        } else if (pcJogada === "Pedra") {
-            resultadoRodada = "Derrota"
-        }
-    }
-    if (suaJogada === "Papel") {
-        if (pcJogada === "Pedra") {
-            resultadoRodada = "Vitória"
-        } else if (pcJogada === "Tesoura") {
-            resultadoRodada = "Derrota"
-        }
-    }
 
-    // Atualizar o contador de acordo com o resultado
-    if (resultadoRodada === "Vitória") {
-        contadorVitoriasJok++
-    } else if (resultadoRodada === "Derrota") {
-        contadorDerrotasJok++
-    } else if (resultadoRodada === "Empate") {
-        contadorEmpatesJok++
-    }
+        // Jogada do PC
+        sorteio = randomNumber(1, 3)
+        if (sorteio === 1) {
+            pcJogada = "Pedra"
+        } else if (sorteio === 2) {
+            pcJogada = "Tesoura"
+        } else if (sorteio === 3) {
+            pcJogada = "Papel"
+        }
+
+        // Comparar as jogadas e obter resultado
+        if (suaJogada === pcJogada) {
+            resultadoRodada = "Empate"
+        } 
+        if (suaJogada === "Pedra") {
+            if (pcJogada === "Tesoura") {
+                resultadoRodada = "Vitória"
+            } else if (pcJogada === "Papel") {
+                resultadoRodada = "Derrota"
+            }
+        }
+        if (suaJogada === "Tesoura") {
+            if (pcJogada === "Papel") {
+                resultadoRodada = "Vitória"
+            } else if (pcJogada === "Pedra") {
+                resultadoRodada = "Derrota"
+            }
+        }
+        if (suaJogada === "Papel") {
+            if (pcJogada === "Pedra") {
+                resultadoRodada = "Vitória"
+            } else if (pcJogada === "Tesoura") {
+                resultadoRodada = "Derrota"
+            }
+        }
+
+        // Atualizar o contador de acordo com o resultado
+        if (resultadoRodada === "Vitória") {
+            contadorVitoriasJok++
+        } else if (resultadoRodada === "Derrota") {
+            contadorDerrotasJok++
+        } else if (resultadoRodada === "Empate") {
+            contadorEmpatesJok++
+        }
  
-    // Limpar resultado e mostrar resultado
-    placarJok.innerHTML = `${resultadoRodada}<br><br>`
-    relatorio.innerHTML = `Você jogou <strong>${suaJogada}</strong> e o computador jogou <strong>${pcJogada}</strong> <br><br>`
-    relatorio.innerHTML += `Vitórias: ${contadorVitoriasJok}<br>`
-    relatorio.innerHTML += `Derrotas: ${contadorDerrotasJok}<br>`
-    relatorio.innerHTML += `Empates: ${contadorEmpatesJok}<br>`
+        // Limpar resultado e mostrar resultado
+        placarJok.innerHTML = `${resultadoRodada}<br><br>`
+        relatorio.innerHTML = `Você jogou <strong>${suaJogada}</strong> e o computador jogou <strong>${pcJogada}</strong> <br><br><br>`
+        relatorio.innerHTML += `Vitórias: ${contadorVitoriasJok}<br>`
+        relatorio.innerHTML += `Derrotas: ${contadorDerrotasJok}<br>`
+        relatorio.innerHTML += `Empates: ${contadorEmpatesJok}<br>`
 
-    console.log(resultadoRodada)
-    console.log(suaJogada)
-    console.log(pcJogada)
-    console.log()
+        console.log(resultadoRodada)
+        console.log(suaJogada)
+        console.log(pcJogada)
+        console.log()
   
 
-    resultadoRodada = ''
+        resultadoRodada = ''
+        }
 })
 
 repetirJok.addEventListener("click", function() {
@@ -136,13 +139,51 @@ repetirJok.addEventListener("click", function() {
 })
 
 
+
 // PAR OU ÍMPAR
+let contadorVitoriasPar = 0;
+let contadorDerrotasPar = 0;
+let suaJogadaPar = document.getElementsByName("pi")
+let numero = document.querySelector("#num")
+let seuNumero;
+let pcNumero;
+
 jogarPar.addEventListener("click", function() {
-    repetirPar.style.display = "block"
-    resultsPar.style.display = "block";
-    parimpar.style.display = "none";
-    escolha.style.display = "none";
+    let suaJogada;
+    let pcJogada;
+    if (!suaJogadaPar[0].checked && !suaJogadaPar[1].checked) {
+        window.alert("Por favor, selecione uma das opções")
+    } else if (numero.value === "" || Number(numero.value) < 0 || Number(numero.value) > 9) {
+        window.alert("Digite um número válido entre 0 e 9.")
+    }else {
+        // Definindo sua jogada
+        repetirPar.style.display = "block"
+        resultsPar.style.display = "block";
+        parimpar.style.display = "none";
+        escolha.style.display = "none";
+
+        if (suaJogadaPar[0].checked) {
+            suaJogada = "Par"
+        } else if (suaJogadaPar[1].checked) {
+            suaJogada = "Ímpar"
+        }
+
+        // Definindo a jogada do computador e o tipo de cada número
+        sorteio = randomNumber(0, 9)
+        nume = sorteio
+        console.log(sorteio)
+        console.log(randomNumber(num))
+        
+    }
 })
+
+function parOuImpar (n) {
+    if (Number(n.value) % 2 == 0) {
+        return "Par"
+    } else {
+        return "Ímpar"
+    }
+}
 
 repetirPar.addEventListener("click", function() {
     resultsJok.style.display = "none";
