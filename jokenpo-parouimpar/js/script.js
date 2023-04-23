@@ -113,16 +113,16 @@ jogarJok.addEventListener("click", function() {
     }
  
     // Limpar resultado e mostrar resultado
-        placarJok.innerHTML = `${resultadoRodada}<br><br>`
-        relatorio.innerHTML = `Você jogou <strong>${suaJogada}</strong> e o computador jogou <strong>${pcJogada}</strong> <br><br>`
-        relatorio.innerHTML += `Vitórias: ${contadorVitoriasJok}<br>`
-        relatorio.innerHTML += `Derrotas: ${contadorDerrotasJok}<br>`
-        relatorio.innerHTML += `Empates: ${contadorEmpatesJok}<br>`
+    placarJok.innerHTML = `${resultadoRodada}<br><br>`
+    relatorio.innerHTML = `Você jogou <strong>${suaJogada}</strong> e o computador jogou <strong>${pcJogada}</strong> <br><br>`
+    relatorio.innerHTML += `Vitórias: ${contadorVitoriasJok}<br>`
+    relatorio.innerHTML += `Derrotas: ${contadorDerrotasJok}<br>`
+    relatorio.innerHTML += `Empates: ${contadorEmpatesJok}<br>`
 
-        console.log(resultadoRodada)
-        console.log(suaJogada)
-        console.log(pcJogada)
-        console.log()
+    console.log(resultadoRodada)
+    console.log(suaJogada)
+    console.log(pcJogada)
+    console.log()
   
 
     resultadoRodada = ''
@@ -134,6 +134,7 @@ repetirJok.addEventListener("click", function() {
     line.style.display = "none";
     escolha.style.display = "block";
 })
+
 
 // PAR OU ÍMPAR
 jogarPar.addEventListener("click", function() {
