@@ -11,7 +11,11 @@ let jogarPar = document.querySelector("#btn-3");
 
 let resultsJok = document.querySelector("#joken-results");
 let resultsPar = document.querySelector("#parim-results");
-let repetir = document.querySelector("#btn-4")
+let repetirJok = document.querySelector("#btn-4")
+let repetirPar = document.querySelector("#btn-5")
+
+let placarJok = document.querySelector("#res")
+let placarPar = document.querySelector("#res-2")
 
 escolher.addEventListener("click", function() {
     resultsJok.style.display = "none";
@@ -29,19 +33,32 @@ escolher.addEventListener("click", function() {
 })
 
 jogarJok.addEventListener("click", function() {
-    repetir.style.display = "block"
+    repetirJok.style.display = "block"
     resultsJok.style.display = "block";
     jokenpo.style.display = "none";
     escolha.style.display = "none";
 })
 
 jogarPar.addEventListener("click", function() {
-    repetir.style.display = "block"
-    resultsPar.style.display = "flex";
+    repetirPar.style.display = "block"
+    resultsPar.style.display = "block";
     parimpar.style.display = "none";
     escolha.style.display = "none";
 })
 
+repetirJok.addEventListener("click", function() {
+    resultsJok.style.display = "none";
+    resultsPar.style.display = "none";
+    line.style.display = "none";
+    escolha.style.display = "block";
+})
+
+repetirPar.addEventListener("click", function() {
+    resultsJok.style.display = "none";
+    resultsPar.style.display = "none";
+    line.style.display = "none";
+    escolha.style.display = "block";
+})
 
 // JOKENPÔ
 
