@@ -151,3 +151,22 @@ h1 {
 #parim-results button:hover{
     opacity: 1;
 }
+
+
+#res,
+#res-2 {
+    font-size: 2em;
+    font-weight: 700;
+    color: #38184C;
+}
+
+#relatorio-1,
+#relatorio-2 {
+    font-size: 1.25em;
+
+}
+#relatorio-1 strong,
+#relatorio-2 strong {
+    color:#1F0802;
+    font-weight: 900;
+}

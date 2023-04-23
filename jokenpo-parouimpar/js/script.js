@@ -39,20 +39,20 @@ function randomNumber (a, b) {
 }
 
 // JOKENPÔ
+let contadorVitoriasJok = 0
+let contadorDerrotasJok = 0
+let contadorEmpatesJok = 0
 jogarJok.addEventListener("click", function() {
     repetirJok.style.display = "block"
     resultsJok.style.display = "block";
     jokenpo.style.display = "none";
     escolha.style.display = "none";
 
-    span = placarJok.querySelector(".relatorio")
+    relatorio = document.querySelector("#relatorio-1")
 
     let suaJogadaJok = document.getElementsByName("pepate")
     let suaJogada;
     let pcJogada;
-    let contadorVitorias = 0
-    let contadorDerrotas = 0
-    let contadorEmpates = 0
     let resultadoRodada;
 
     // Sua jogada
@@ -79,7 +79,7 @@ jogarJok.addEventListener("click", function() {
 
     // Comparar as jogadas e obter resultado
     if (suaJogada === pcJogada) {
-        resultadoRodada = "EMPATE"
+        resultadoRodada = "Empate"
     } 
     if (suaJogada === "Pedra") {
         if (pcJogada === "Tesoura") {
@@ -105,34 +105,34 @@ jogarJok.addEventListener("click", function() {
 
     // Atualizar o contador de acordo com o resultado
     if (resultadoRodada === "Vitória") {
-        contadorVitorias++
+        contadorVitoriasJok++
     } else if (resultadoRodada === "Derrota") {
-        contadorDerrotas++
+        contadorDerrotasJok++
     } else if (resultadoRodada === "Empate") {
-        contadorEmpates++
+        contadorEmpatesJok++
     }
-
+ 
     // Limpar resultado e mostrar resultado
-
-    repetirJok.addEventListener("click", function() {
-        resultsJok.style.display = "none";
-        resultsPar.style.display = "none";
-        line.style.display = "none";
-        escolha.style.display = "block";
-
         placarJok.innerHTML = `${resultadoRodada}<br><br>`
-        span = `Você jogou ${suaJogada} e o computador jogou ${pcJogada}<br><br>`
-        span += `Vitórias: ${contadorVitorias}<br>`
-        span += `Derrotas: ${contadorDerrotas}<br>`
-        span += `Empates: ${contadorEmpates}<br>`
+        relatorio.innerHTML = `Você jogou <strong>${suaJogada}</strong> e o computador jogou <strong>${pcJogada}</strong> <br><br>`
+        relatorio.innerHTML += `Vitórias: ${contadorVitoriasJok}<br>`
+        relatorio.innerHTML += `Derrotas: ${contadorDerrotasJok}<br>`
+        relatorio.innerHTML += `Empates: ${contadorEmpatesJok}<br>`
 
         console.log(resultadoRodada)
         console.log(suaJogada)
         console.log(pcJogada)
         console.log()
-    })
+  
 
     resultadoRodada = ''
+})
+
+repetirJok.addEventListener("click", function() {
+    resultsJok.style.display = "none";
+    resultsPar.style.display = "none";
+    line.style.display = "none";
+    escolha.style.display = "block";
 })
 
 // PAR OU ÍMPAR
