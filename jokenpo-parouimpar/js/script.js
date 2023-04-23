@@ -16,6 +16,8 @@ let repetirPar = document.querySelector("#btn-5")
 
 let placarJok = document.querySelector("#res")
 let placarPar = document.querySelector("#res-2")
+let relatorioJok = document.querySelector("#relatorio-1")
+let relatorioPar = document.querySelector("#relatorio-2")
 
 let sorteio;
 
@@ -43,8 +45,6 @@ let contadorVitoriasJok = 0
 let contadorDerrotasJok = 0
 let contadorEmpatesJok = 0
 jogarJok.addEventListener("click", function() {
-    relatorio = document.querySelector("#relatorio-1")
-
     let suaJogadaJok = document.getElementsByName("pepate")
     let suaJogada;
     let pcJogada;
@@ -59,13 +59,10 @@ jogarJok.addEventListener("click", function() {
         escolha.style.display = "none";
         // Sua jogada
         if (suaJogadaJok[0].checked) {
-            console.log("PEDRA")
             suaJogada = "Pedra"
         } else if (suaJogadaJok[1].checked) {
-            console.log("TESOURA")
             suaJogada = "Tesoura"
         } else if (suaJogadaJok[2].checked) {
-            console.log("PAPEL")
             suaJogada = "Papel"
         }
 
@@ -116,17 +113,10 @@ jogarJok.addEventListener("click", function() {
  
         // Limpar resultado e mostrar resultado
         placarJok.innerHTML = `${resultadoRodada}<br><br>`
-        relatorio.innerHTML = `Você jogou <strong>${suaJogada}</strong> e o computador jogou <strong>${pcJogada}</strong> <br><br><br>`
-        relatorio.innerHTML += `Vitórias: ${contadorVitoriasJok}<br>`
-        relatorio.innerHTML += `Derrotas: ${contadorDerrotasJok}<br>`
-        relatorio.innerHTML += `Empates: ${contadorEmpatesJok}<br>`
-
-        console.log(resultadoRodada)
-        console.log(suaJogada)
-        console.log(pcJogada)
-        console.log()
-  
-
+        relatorioJok.innerHTML = `Você jogou <strong>${suaJogada}</strong> e o computador jogou <strong>${pcJogada}</strong> <br><br><br>`
+        relatorioJok.innerHTML += `Vitórias: ${contadorVitoriasJok}<br>`
+        relatorioJok.innerHTML += `Derrotas: ${contadorDerrotasJok}<br>`
+        relatorioJok.innerHTML += `Empates: ${contadorEmpatesJok}<br>`
         resultadoRodada = ''
         }
 })
@@ -145,40 +135,57 @@ let contadorVitoriasPar = 0;
 let contadorDerrotasPar = 0;
 let suaJogadaPar = document.getElementsByName("pi")
 let numero = document.querySelector("#num")
-let seuNumero;
 let pcNumero;
+let soma = 0;
+let resultado;
+let suaJogada;
 
 jogarPar.addEventListener("click", function() {
-    let suaJogada;
-    let pcJogada;
+    let relatorio = document.querySelector("#relatorio-2")
     if (!suaJogadaPar[0].checked && !suaJogadaPar[1].checked) {
-        window.alert("Por favor, selecione uma das opções")
+        window.alert("Por favor, selecione uma das opções");
     } else if (numero.value === "" || Number(numero.value) < 0 || Number(numero.value) > 9) {
-        window.alert("Digite um número válido entre 0 e 9.")
+        window.alert("Digite um número válido entre 0 e 9.");
     }else {
         // Definindo sua jogada
-        repetirPar.style.display = "block"
+        repetirPar.style.display = "block";
         resultsPar.style.display = "block";
         parimpar.style.display = "none";
         escolha.style.display = "none";
 
         if (suaJogadaPar[0].checked) {
-            suaJogada = "Par"
+            suaJogada = "Par";
+            pcJogada = "Ímpar";
+            
         } else if (suaJogadaPar[1].checked) {
-            suaJogada = "Ímpar"
+            suaJogada = "Ímpar";
+            pcJogada = "Par";
         }
 
         // Definindo a jogada do computador e o tipo de cada número
-        sorteio = randomNumber(0, 9)
-        nume = sorteio
-        console.log(sorteio)
-        console.log(randomNumber(num))
-        
+        pcNumero = randomNumber(0, 9)
+
+        // Descobrindo o vencedor
+        soma = Number(pcNumero) + Number(numero.value)
+        console.log(`${pcNumero} + ${numero.value} = ${soma}`)
+        if (parOuImpar(soma) === suaJogada) {
+            resultado = "VITÓRIA";
+            contadorVitoriasPar++;
+        } else if (parOuImpar(soma) !== suaJogada) {
+            resultado = "DERROTA";
+            contadorDerrotasPar++;
+        }
+
+        // Atualizando os placares
+        placarPar.innerHTML = `${resultado}<br><br>`
+        relatorioPar.innerHTML = `Você jogou <strong>${numero.value}</strong>, enquanto o PC jogou <strong>${pcNumero}</strong>, o que resulta em <strong>${soma}</strong>, que é <strong>${parOuImpar(soma)}</strong><br><br><br>`
+        relatorioPar.innerHTML += `Vitórias: ${contadorVitoriasPar}<br>`
+        relatorioPar.innerHTML += `Derrotas: ${contadorDerrotasPar}`
     }
 })
 
 function parOuImpar (n) {
-    if (Number(n.value) % 2 == 0) {
+    if (Number(n) % 2 == 0) {
         return "Par"
     } else {
         return "Ímpar"
