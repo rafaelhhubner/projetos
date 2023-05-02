@@ -4,7 +4,7 @@ import Message from "../layout/Message"
 
 function Projects() {
     const location = useLocation()
-    var message = ''
+    let message = ''
     if (location.state) {
         message = location.state.message
     }
