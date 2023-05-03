@@ -21,6 +21,28 @@
       "cost": 0,
       "services": [],
       "id": 42
+    },
+    {
+      "name": "asasd",
+      "budget": "123",
+      "category": {
+        "id": "1",
+        "name": "Infra"
+      },
+      "cost": 0,
+      "services": [],
+      "id": 43
+    },
+    {
+      "name": "asasd",
+      "budget": "123",
+      "category": {
+        "id": "2",
+        "name": "Desenvolvimento"
+      },
+      "cost": 0,
+      "services": [],
+      "id": 44
     }
   ],
   "categories": [
