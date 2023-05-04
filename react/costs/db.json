@@ -12,19 +12,8 @@
       "id": 1
     },
     {
-      "name": "Teste 2",
-      "budget": "25000",
-      "category": {
-        "id": "2",
-        "name": "Desenvolvimento"
-      },
-      "cost": 0,
-      "services": [],
-      "id": 2
-    },
-    {
-      "name": "Teste 3",
-      "budget": "80000",
+      "name": "Kurapika",
+      "budget": "500000",
       "category": {
         "id": "3",
         "name": "Design"
@@ -34,15 +23,26 @@
       "id": 3
     },
     {
-      "name": "Teste 4",
-      "budget": "32500",
+      "name": "Hirugami",
+      "budget": "287000",
+      "category": {
+        "id": "1",
+        "name": "Infra"
+      },
+      "cost": 0,
+      "services": [],
+      "id": 4
+    },
+    {
+      "name": "Nacho Varga",
+      "budget": "92300",
       "category": {
         "id": "4",
         "name": "Planejamento"
       },
       "cost": 0,
       "services": [],
-      "id": 4
+      "id": 5
     }
   ],
   "categories": [
