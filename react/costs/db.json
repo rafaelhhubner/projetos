@@ -1,11 +1,11 @@
 {
   "projects": [
     {
-      "name": "Teste 1",
-      "budget": "15000",
+      "name": "Greed",
+      "budget": "32650",
       "category": {
-        "id": "1",
-        "name": "Infra"
+        "id": "2",
+        "name": "Desenvolvimento"
       },
       "cost": 0,
       "services": [],
@@ -24,7 +24,7 @@
     },
     {
       "name": "Hirugami",
-      "budget": "287000",
+      "budget": "191000",
       "category": {
         "id": "1",
         "name": "Infra"
