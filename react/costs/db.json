@@ -47,19 +47,13 @@
         "id": "4",
         "name": "Planejamento"
       },
-      "cost": 88000,
+      "cost": 48000,
       "services": [
         {
           "name": "Exterminar Salamancas",
           "cost": "48000",
           "description": "Dar um jeito neles",
           "id": "22218804-907b-4a28-83ff-b9d4567b1e49"
-        },
-        {
-          "name": "Proteger o pai",
-          "cost": "40000",
-          "description": "Garantir que Mike prometa a segurança de seu pai",
-          "id": "b1880338-6da5-4027-8779-427d2934b155"
         }
       ],
       "id": 5
