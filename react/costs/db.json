@@ -18,8 +18,15 @@
         "id": "3",
         "name": "Design"
       },
-      "cost": 0,
-      "services": [],
+      "cost": 1250,
+      "services": [
+        {
+          "name": "Matar Uvogin",
+          "cost": "1250",
+          "description": "Varrer o chão com esse noia",
+          "id": "7a681ded-acd9-4428-b94d-6dd08f02b11c"
+        }
+      ],
       "id": 3
     },
     {
