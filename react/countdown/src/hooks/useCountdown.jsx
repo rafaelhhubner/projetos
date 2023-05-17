@@ -30,9 +30,7 @@ const useCountdown = (date) => {
 
     setInterval(countDown, 1000);
 
-    console.log(dayNumber, hourNumber, minuteNumber, secondNumber);
-
-    return [day, hour, minute, second]
+    return [day, hour, minute, second];
 }
 
 export default useCountdown
