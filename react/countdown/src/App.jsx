@@ -3,13 +3,15 @@ import Counter from "./components/Counter";
 
 import NewYear from "./assets/newyear.jpg"
 
+import useCountdown from './hooks/useCountdown';
+
 import { useState } from 'react'
 import './App.css'
 
 
 function App() {
-  const [count, setCount] = useState(0)
-
+  const x = useCountdown("Jan 1, 2024 00:00:00")
+  
   return (
       <div className="App" style={{backgroundImage: `url(${NewYear}) ` }}>
         <div className="container">
