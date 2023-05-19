@@ -1,6 +1,9 @@
-import Welcome from "./components/Welcome"
+import { useContext } from "react";
 
-import './App.css'
+import Welcome from "./components/Welcome";
+import Questions from "./components/Question";
+
+import './App.css';
 
 function App() {
   
@@ -13,4 +16,4 @@ function App() {
   )
 }
 
-export default App
+export default App;
